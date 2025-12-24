@@ -50,6 +50,9 @@ class AppConfig:
 class McpMessage:
     sender: str
     content: str
+    # field 是 Python 标准库 dataclasses 模块提供的工具函数，专门用于精细化配置 @dataclass 装饰的类的属性。
+    # 若直接写 metadata: Dict = {}，会导致所有实例会共享同一个字典（Python 可变默认值的坑）；
+    # field(default_factory=dict) 表示：每次创建 McpMessage 对象时，都会调用 dict() 生成一个新的空字典，避免共享问题。
     metadata: Dict[str, Any] = field(default_factory=dict)
     protocol_version: str = "1.0"
 
@@ -141,6 +144,7 @@ class BaseAgent(ABC):
     def __init__(self, llm_service: LLMService):
         self.llm = llm_service
 
+    # 子类必须实现的统一接口
     @abstractmethod
     def process_task(self, message: McpMessage) -> McpMessage:
         pass
