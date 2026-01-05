@@ -131,6 +131,7 @@ class LLMService:
                 ],
                 stream=True,
             )
+
             return self._process_stream(response)
         except Exception as e:
             logger.error(f"LLM Call Failed: {e}")
