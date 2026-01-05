@@ -44,8 +44,8 @@ result_1, trace_1 = context_engine(
     embedding_model=config.embedding_model,
     embedding_dim=config.embedding_dim,
     # *** FIX: Pass the namespaces into the engine ***
-    namespace_context=os.getenv("NAMESPACE_CONTEXT"),
-    namespace_knowledge=os.getenv("NAMESPACE_KNOWLEDGE"),
+    namespace_context=config.ns_context,
+    namespace_knowledge=config.ns_knowledge,
 )
 
 if result_1:
