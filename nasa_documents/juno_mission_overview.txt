@@ -1,0 +1,6 @@
+
+The Juno mission's primary goal is to understand the origin and evolution of Jupiter. Underneath its dense cloud cover, Jupiter safeguards secrets to the fundamental processes and conditions that governed our solar system during its formation. As our primary example of a giant planet, Jupiter can also provide critical knowledge for understanding the planetary systems being discovered around other stars. Juno's specific scientific objectives include:
+1. Origin: Determine the abundance of water and constrain the planet's core mass to decide which theory of the planet's formation is correct.
+2. Atmosphere: Understand the composition, temperature, cloud motions and other properties of Jupiter's atmosphere.
+3. Magnetosphere: Map Jupiter's magnetic and gravity fields, revealing the planet's deep structure and exploring the polar magnetosphere.
+Juno is the first space mission to orbit an outer-planet from pole to pole, and the first to fly below the planet's hazardous radiation belts.
