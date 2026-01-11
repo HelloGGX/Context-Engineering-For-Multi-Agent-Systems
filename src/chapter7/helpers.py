@@ -1,8 +1,9 @@
 import logging
 import re
+
 import tiktoken
-from tenacity import retry, stop_after_attempt, wait_random_exponential
 from openai import APIError  # Import specific error for better handling
+from tenacity import retry, stop_after_attempt, wait_random_exponential
 
 # === Configure Production-Level Logging ===
 logging.basicConfig(
@@ -154,5 +155,5 @@ def helper_sanitize_input(text):
     ]
     for pattern in injection_patterns:
         if re.search(pattern, text, re.IGNORECASE):
-            raise ValueError(f"Input sanitization failed. Potential threat detected.")
+            raise ValueError("Input sanitization failed. Potential threat detected.")
     return text

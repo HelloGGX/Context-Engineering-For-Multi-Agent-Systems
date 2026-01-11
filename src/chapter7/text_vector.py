@@ -1,9 +1,8 @@
-import re
+import tiktoken
 from openai import OpenAI
 from pinecone import Pinecone
-from tenacity import retry, stop_after_attempt, wait_random_exponential
-import tiktoken
 from registry import AppConfig
+from tenacity import retry, stop_after_attempt, wait_random_exponential
 
 tokenizer = tiktoken.get_encoding("cl100k_base")
 config = AppConfig()

@@ -12,8 +12,8 @@ import json
 import logging
 import time
 
-from registry import AGENT_TOOLKIT
 from helpers import call_llm_robust, create_mcp_message
+from registry import AGENT_TOOLKIT
 
 
 class ExecutionTrace:
@@ -193,7 +193,7 @@ def context_engine(
             goal, capabilities, client=client, generation_model=generation_model
         )
         trace.log_plan(plan)
-    except Exception as e:
+    except Exception:
         # The error logging is already handled within the planner, but we finalize the trace here.
         trace.finalize("Failed during Planning")
         return None, trace

@@ -143,7 +143,7 @@ def agent_researcher(
 
         """
         final_output输出像下面:
-        
+
         The Juno mission, launched by NASA in 2011, has three primary scientific objectives:
             1. Determine Jupiter's water abundance and core mass to verify planetary formation theories;
             2. Analyze Jupiter's atmosphere, including composition and cloud movements;

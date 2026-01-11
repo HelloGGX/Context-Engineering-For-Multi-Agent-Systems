@@ -1,21 +1,21 @@
 import copy
-import os
-import sys
 import json
 import logging
+import os
+import sys
 import textwrap
 import time
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field, asdict
-from typing import Dict, Any, List, Optional
+from dataclasses import asdict, dataclass, field
+from typing import Any, Dict, List
 
+import tiktoken
 from dotenv import load_dotenv
+from IPython.display import Markdown, display
 from openai import OpenAI
 from pinecone import Pinecone, ServerlessSpec
-from tenacity import retry, wait_random_exponential, stop_after_attempt
-import tiktoken
+from tenacity import retry, stop_after_attempt, wait_random_exponential
 from tqdm import tqdm
-from IPython.display import display, Markdown
 
 # 加载环境变量
 load_dotenv()
@@ -558,7 +558,7 @@ def context_engine(goal):
         mcp_from_planner = planner.process_task(mcp_to_planner)
         plan = mcp_from_planner.dict_content.get("plan")
         trace.log_plan(plan)
-    except Exception as e:
+    except Exception:
         trace.finalize("Failed during Planning")
         return None, trace
 
@@ -757,7 +757,7 @@ def main():
             # Optional: Display the trace to see the engine's process
             # trace_1.display_trace()
 
-    except Exception as e:
+    except Exception:
         logger.exception("Fatal Error in Main Loop")
         sys.exit(1)
 

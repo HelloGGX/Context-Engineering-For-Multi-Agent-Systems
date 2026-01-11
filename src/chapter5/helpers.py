@@ -1,7 +1,8 @@
 import logging
+
 import tiktoken
-from tenacity import retry, stop_after_attempt, wait_random_exponential
 from openai import APIError  # Import specific error for better handling
+from tenacity import retry, stop_after_attempt, wait_random_exponential
 
 # === Configure Production-Level Logging ===
 logging.basicConfig(

@@ -1,17 +1,17 @@
-import os
-import sys
 import json
 import logging
+import os
+import sys
 import time
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field, asdict
-from typing import Dict, Any, List, Optional
+from dataclasses import asdict, dataclass, field
+from typing import Any, Dict, List, Optional
 
-from dotenv import load_dotenv
-from openai import OpenAI, APIError, APIConnectionError, RateLimitError
-from pinecone import Pinecone, ServerlessSpec
-from tenacity import retry, wait_random_exponential, stop_after_attempt
 import tiktoken
+from dotenv import load_dotenv
+from openai import OpenAI
+from pinecone import Pinecone, ServerlessSpec
+from tenacity import retry, stop_after_attempt, wait_random_exponential
 from tqdm import tqdm
 
 # 加载环境变量
@@ -288,7 +288,7 @@ class WriterAgent(BaseAgent):
         sys_prompt = f"""You are a specialized content generator.
         GENERATE content based on the RESEARCH FINDINGS.
         STRICTLY FOLLOW the structure and style defined in the SEMANTIC BLUEPRINT.
-        
+
         --- SEMANTIC BLUEPRINT ---
         {blueprint}
         --------------------------
@@ -524,7 +524,7 @@ def main():
         print(final_msg.dict_content.get("output", "No output generated."))
         print("#" * 30)
 
-    except Exception as e:
+    except Exception:
         logger.exception("Fatal Error in Main Loop")
         sys.exit(1)
 

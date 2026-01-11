@@ -8,17 +8,16 @@
 
 # Ensure required display imports are present (for Colab/Jupyter)
 import logging
-import os
+
+from dotenv import load_dotenv
+from engine import context_engine
+from helpers import count_tokens
 
 # # 添加src目录到Python路径，以便正确导入模块
 # sys.path.insert(0, os.path.join(os.path.dirname(__file__), "."))
-
 from openai import OpenAI
 from pinecone import Pinecone
-from helpers import count_tokens
-from engine import context_engine
 from registry import AppConfig
-from dotenv import load_dotenv
 
 # 加载环境变量
 load_dotenv()

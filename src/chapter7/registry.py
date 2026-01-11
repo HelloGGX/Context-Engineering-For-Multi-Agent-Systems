@@ -6,6 +6,7 @@
 
 import logging
 import os
+
 import agents
 from dotenv import load_dotenv
 
@@ -116,7 +117,7 @@ class AgentRegistry:
            INPUTS:
              - "topic_query": (String) The subject matter to research.
            OUTPUT: Synthesized facts (String).
-        
+
         3. AGENT: Summarizer
             ROLE: Reduces large text to a concise summary based on a specific objective.
             Ideal for managing token counts before a generation step.

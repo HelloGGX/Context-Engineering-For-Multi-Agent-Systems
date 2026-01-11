@@ -1,15 +1,16 @@
-import os
-import sys
 import json
 import logging
+import os
+import sys
 import time
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field, asdict
-from typing import Dict, Any
+from dataclasses import asdict, dataclass, field
+from typing import Any, Dict
+
 from dotenv import load_dotenv
 
 # 引入必要的 OpenAI 异常类
-from openai import OpenAI, APIError, APIConnectionError, RateLimitError
+from openai import APIConnectionError, APIError, OpenAI, RateLimitError
 
 load_dotenv()
 # ==========================================
@@ -284,7 +285,7 @@ def main():
         print(final_msg.content)
         print("#" * 30)
 
-    except Exception as e:
+    except Exception:
         logger.exception("程序发生致命错误")
         sys.exit(1)
 
