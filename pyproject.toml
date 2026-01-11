@@ -1,0 +1,35 @@
+[project]
+name = "ai-agents-roadmap"
+version = "0.1.0"
+description = "A comprehensive roadmap for learning AI Agents"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.0.0",
+    "langchain>=0.1.0",
+    "python-dotenv>=1.0.0"
+]
+
+# 采用 Ruff 进行极速 Lint 和 Format
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort (自动排序 import)
+    "B",  # flake8-bugbear (发现潜在 bug)
+]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# 配置 Pytest
+[tool.pytest.ini_options]
+testpaths = ["tests", "src"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "-ra -q"

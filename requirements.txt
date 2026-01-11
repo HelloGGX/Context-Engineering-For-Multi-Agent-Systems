@@ -1,0 +1,8 @@
+openai
+pinecone-client
+python-dotenv
+tiktoken
+tenacity
+tqdm
+pytest
+ruff
