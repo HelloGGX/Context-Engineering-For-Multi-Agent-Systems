@@ -22,7 +22,7 @@ Key focus: Turn theoretical knowledge into actionable skills. No more scattered 
 - **Job Seekers**: Gain practical experience to ace interviews and secure AI roles.
 - **Self-Learners**: Those willing to invest in premium resources for deeper, guided mastery.
 
-Free core content is open-source. For premium video courses, exclusive projects, and community support, check our [membership options](https://patreon.com/[Your-Username]) or [courses](https://teachable.com/[Your-Username]).
+Free core content is open-source. For premium video courses, exclusive projects, and community support, check our [membership options](https://patreon.com/HelloGGX) or [courses](https://teachable.com/HelloGGX).
 
 ## Key Features
 
@@ -89,8 +89,8 @@ We welcome contributions to improve the roadmap!
 
 ## Community & Support
 
-- **Discussions**: Join [GitHub Discussions](https://github.com/[Your-Username]/ai-agents-roadmap/discussions) for questions.
-- **Premium Community**: Access Q&A, live sessions via [Patreon](https://patreon.com/[Your-Username]).
+- **Discussions**: Join [GitHub Discussions](https://github.com/HelloGGX/ai-agents-roadmap/discussions) for questions.
+- **Premium Community**: Access Q&A, live sessions via [Patreon](https://patreon.com/HelloGGX).
 - **Contact**: Gavin  
   - X/Twitter: [@gavincoding](https://x.com/gavincoding?s=21)
   - Email: gavin_cat@outlook.com
@@ -107,4 +107,4 @@ MIT License. See [LICENSE](./LICENSE).
 
 ---
 
-Star ⭐ this repo if it helps your journey. For accelerated learning with premium content, explore our [courses and membership](https://teachable.com/[Your-Username]). Let's democratize AI Agents education! 🚀
+Star ⭐ this repo if it helps your journey. For accelerated learning with premium content, explore our [courses and membership](https://teachable.com/HelloGGX). Let's democratize AI Agents education! 🚀
