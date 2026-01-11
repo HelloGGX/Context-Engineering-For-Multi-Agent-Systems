@@ -49,9 +49,7 @@ class ExecutionTrace:
         self.status = status
         self.final_output = final_output
         self.duration = time.time() - self.start_time
-        logging.info(
-            f"跟踪已完成，状态: '{status}'，耗时: {self.duration:.2f}秒"
-        )
+        logging.info(f"跟踪已完成，状态: '{status}'，耗时: {self.duration:.2f}秒")
 
 
 # === 6.2. The Planner (Hardened with Structured JSON Output) ===
@@ -101,9 +99,7 @@ def planner(goal, capabilities, client, generation_model):
         try:
             plan_data = json.loads(plan_json_string)
         except json.JSONDecodeError as e:
-            logging.error(
-                f"规划器无法解析JSON，原始字符串: {plan_json_string}"
-            )
+            logging.error(f"规划器无法解析JSON，原始字符串: {plan_json_string}")
             raise ValueError(f"Invalid JSON returned by Planner: {e}")
 
         # Handle the primary expected case: {"plan": [...]}
@@ -116,20 +112,14 @@ def planner(goal, capabilities, client, generation_model):
 
         # Handle edge cases
         elif isinstance(plan_data, list):
-            logging.warning(
-                "规划器返回了原始列表而非请求的JSON对象。"
-            )
+            logging.warning("规划器返回了原始列表而非请求的JSON对象。")
             plan = plan_data
         elif isinstance(plan_data, dict) and "step" in plan_data:
-            logging.warning(
-                "规划器收到单个JSON步骤对象，正在将其包装为列表。"
-            )
+            logging.warning("规划器收到单个JSON步骤对象，正在将其包装为列表。")
             plan = [plan_data]
         else:
             # Addresses the original "The extracted JSON is not a list structure" error.
-            logging.error(
-                f"规划器返回了意外的JSON结构。响应: {plan_json_string}"
-            )
+            logging.error(f"规划器返回了意外的JSON结构。响应: {plan_json_string}")
             raise ValueError(
                 "The extracted JSON does not conform to the expected structure (must be an object containing a 'plan' list)."
             )

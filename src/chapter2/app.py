@@ -113,7 +113,7 @@ class LLMService:
 
         full_content = []
         has_printed_separator = False
-        print(f"\n{'='*15} LLM 响应开始 {'='*15}\n")
+        print(f"\n{'=' * 15} LLM 响应开始 {'=' * 15}\n")
 
         for chunk in response:
             if not chunk.choices:
@@ -126,12 +126,12 @@ class LLMService:
                 self._print_stream(reasoning)
             elif content:
                 if not has_printed_separator:
-                    print(f"\n\n{'='*15} 最终回答 {'='*15}\n")
+                    print(f"\n\n{'=' * 15} 最终回答 {'=' * 15}\n")
                     has_printed_separator = True
                 self._print_stream(content)
                 full_content.append(content)
 
-        print(f"\n\n{'='*15} 响应结束 {'='*15}\n")
+        print(f"\n\n{'=' * 15} 响应结束 {'=' * 15}\n")
         return "".join(full_content)
 
 
@@ -183,7 +183,7 @@ class WriterAgent(BaseAgent):
             content=blog_post,
             metadata={
                 "prev_sender": message.sender,
-                "time": f"{time.time()-start_time:.2f}s",
+                "time": f"{time.time() - start_time:.2f}s",
             },
         )
 
@@ -230,7 +230,7 @@ class Orchestrator(BaseAgent):
         feedback = ""
 
         for i in range(max_revisions):
-            logger.info(f"[Orchestrator] 正在进行第 {i+1} 次创作尝试...")
+            logger.info(f"[Orchestrator] 正在进行第 {i + 1} 次创作尝试...")
 
             # 准备创作上下文
             writer_input = res_summary

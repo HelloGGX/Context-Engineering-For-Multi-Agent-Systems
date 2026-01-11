@@ -13,7 +13,7 @@ logging.basicConfig(
 def process_stream(response) -> str:
     """处理流式响应并打印"""
     full_content = []
-    print(f"\n{'='*15} AI Stream Start {'='*15}")
+    print(f"\n{'=' * 15} AI Stream Start {'=' * 15}")
     for chunk in response:
         if not chunk.choices:
             continue
@@ -25,7 +25,7 @@ def process_stream(response) -> str:
         if content:
             print(content, end="", flush=True)
         full_content.append(content)
-    print(f"\n{'='*15} AI Stream End {'='*15}\n")
+    print(f"\n{'=' * 15} AI Stream End {'=' * 15}\n")
     return "".join(full_content)
 
 
