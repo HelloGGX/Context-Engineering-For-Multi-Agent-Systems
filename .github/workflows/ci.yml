@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-# 仅允许最新的 commit 运行，节省资源 (参考 opencode 策略)
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -18,21 +17,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Install uv (Fast Python Package Manager)
-        uses: astral-sh/setup-uv@v1 # 2026年趋势：使用 uv 替代 pip，速度更快
+      - name: Install uv
+        uses: astral-sh/setup-uv@v1
         
       - name: Set up Python
         run: uv python install 3.11
 
       - name: Install dependencies
-        run: uv pip install ruff pytest -r requirements.txt --system
+        run: |
+          uv venv
+          uv pip install ruff pytest -r requirements.txt
 
       - name: 🔍 Lint & Format Check (Ruff)
         run: |
-          ruff check .
-          ruff format --check .
+          uv run ruff check .
+          uv run ruff format --check .
 
       - name: 🧪 Run Tests
         env:
-          OPENAI_API_KEY: "sk-dummy-key-for-ci" # 防止测试因缺少 key 报错
-        run: pytest
+          OPENAI_API_KEY: "sk-dummy-key-for-ci"
+        run: uv run pytest
