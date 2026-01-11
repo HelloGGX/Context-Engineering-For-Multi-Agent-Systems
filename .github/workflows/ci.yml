@@ -14,10 +14,6 @@ jobs:
   quality:
     name: 🛡️ Code Quality
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-
     steps:
       - uses: actions/checkout@v4
       
@@ -30,18 +26,14 @@ jobs:
       - name: Install dependencies
         run: |
           uv venv
-          source .venv/bin/activate
           uv pip install ruff pytest -r requirements.txt
-          echo "VIRTUAL_ENV=$PWD/.venv" >> $GITHUB_ENV
-          echo "$PWD/.venv/bin" >> $GITHUB_PATH
 
       - name: 🔍 Lint & Format Check (Ruff)
-        # 现在可以直接运行 ruff，因为路径已加入 PATH
         run: |
-          ruff check .
-          ruff format --check .
+          uv run ruff check .
+          uv run ruff format --check .
 
       - name: 🧪 Run Tests
         env:
           OPENAI_API_KEY: "sk-dummy-key-for-ci"
-        run: pytest
+        run: uv run pytest
