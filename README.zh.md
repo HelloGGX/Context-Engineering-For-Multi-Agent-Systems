@@ -1,5 +1,7 @@
 # AI Agents 路线图：从零基础到大师 🧠
 
+![AI Agents logo](./docs/logo.png)  
+
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)](https://www.python.org/)
 [![Focus](https://img.shields.io/badge/Focus-AI_Agents-green?style=for-the-badge)](./docs)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)](./LICENSE)
@@ -24,7 +26,7 @@
 - **求职者**：获得实际经验，轻松通过面试并获得AI职位。
 - **自学者**：那些愿意投资高级资源进行更深入、指导性学习的人。
 
-核心内容免费开源。对于高级视频课程、独家项目和社区支持，请查看我们的[会员选项](https://patreon.com/[Your-Username]) 或 [课程](https://teachable.com/[Your-Username])。
+核心内容免费开源。对于高级视频课程、独家项目和社区支持，请查看我们的[会员选项](https://patreon.com/HelloGGX) 或 [课程](https://teachable.com/HelloGGX)。
 
 ## 核心功能
 
@@ -97,8 +99,8 @@ python src/agents-101/simple-agent.py
 
 ## 社区与支持
 
-- **讨论**：加入 [GitHub Discussions](https://github.com/[Your-Username]/ai-agents-roadmap/discussions) 以提问。
-- **高级社区**：通过 [Patreon](https://patreon.com/[Your-Username]) 访问Q&A和直播会话。
+- **讨论**：加入 [GitHub Discussions](https://github.com/HelloGGX/ai-agents-roadmap/discussions) 以提问。
+- **高级社区**：通过 [Patreon](https://patreon.com/HelloGGX) 访问Q&A和直播会话。
 - **联系**：Gavin  
   - X/Twitter: [@gavincoding](https://x.com/gavincoding?s=21)  
   - 邮箱: gavin_cat@outlook.com
@@ -115,4 +117,4 @@ MIT许可证。详见 [LICENSE](./LICENSE)。
 
 ---
 
-如果这个仓库对你的学习有帮助，请Star ⭐️ 或分享给他人。对于加速学习的高级内容，请探索我们的[课程和会员](https://teachable.com/[Your-Username])。让我们共同普及AI Agents教育！🚀
+如果这个仓库对你的学习有帮助，请Star ⭐️ 或分享给他人。对于加速学习的高级内容，请探索我们的[课程和会员](https://teachable.com/HelloGGX)。让我们共同普及AI Agents教育！🚀
